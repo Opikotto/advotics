@@ -105,6 +105,8 @@ header {
 
 .container .rdrDateRangePickerWrapper {
      width: 100%;
+     max-height: 339px;
+     min-height: 339px;
 }
 
 .container .rdrMonthAndYearWrapper {
@@ -114,10 +116,10 @@ header {
      position: relative;
      width: 86%;
      margin: auto;
+     margin-top: 0px;
 }
 
 .container .rdrCalendarWrapper {
-     margin: auto;
      width: 100%;
 }
 
@@ -129,7 +131,8 @@ header {
 }
 
 .container .rdrMonths {
-     margin: auto
+     margin: auto;
+     margin-top: 0px;
 }
 
 header .container img {
