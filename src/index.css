@@ -1,13 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+     margin: 0;
+     font-family: 'Open Sans', sans-serif;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     color: #727272;
+     background: #F7F7F7 0% 0% no-repeat padding-box !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+     box-sizing: border-box;
+     color: #727272;
 }
+h1,h2,h3,h4,h5,h6,p {
+     margin-bottom: 0px;
+     letter-spacing: 0.2px;
+}
+code {
+     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
+}
+
+header {
+     height: 64px;
+     background: #FFFFFF 0% 0% no-repeat padding-box;
+     box-shadow: 0px 3px 6px #00000029;
+}
+
+.rdrDateDisplayWrapper {
+     display: none
+}
+
+.container .rdrDay {
+     background: transparent;
+}
+
+.container .rdrDay:not(.rdrDayPassive) .rdrInRange~.rdrDayNumber span,
+.container .rdrDay:not(.rdrDayPassive) .rdrStartEdge~.rdrDayNumber span,
+.container .rdrDay:not(.rdrDayPassive) .rdrEndEdge~.rdrDayNumber span,
+.container .rdrDay:not(.rdrDayPassive) .rdrSelected~.rdrDayNumber span {
+     color: #37B04C;
+     font-weight: bold;
+     border: 1px solid #37b04c69;
+     padding: 0px 6px;
+     border-radius: 50px;
+     height: 27px;
+     width: 27px;
+     line-height: 25px;
+     background: #37b04c69;
+}
+
+.rdrDayToday .rdrDayNumber span:after {
+     display: none
+}
+
+.container .rdrMonthAndYearPickers {
+     display: none;
+}
+
+.container .rdrMonthName {
+     text-align: center;
+}
+
+.container .rdrInputRanges {
+     display: none;
+}
+
+.container button.rdrDay.rdrDayToday span {
+     color: #37B04C;
+}
+
+.container .rdrNextPrevButton {
+     display: block;
+     width: 24px;
+     height: 24px;
+     background: transparent;
+     margin-top: 0px;
+}
+
+.container .form-control {
+     box-shadow: 0px 2px 3px #00000029;
+     border-radius: 2px;
+     border: 1px solid transparent;
+     text-align: right;
+     width: 481px;
+     height: 48px;
+     float: right;
+     color: #6A6A6A;
+     font-size:16px;
+     padding-right: 20px;
+}
+
+.parent-date-range {
+     border-bottom: 0px solid #CDCDCD;
+     border-left: 1px solid #CDCDCD;
+     border-right: 1px solid #CDCDCD;
+     background: #fff;
+     position: relative;
+}
+
+.container .form-control:focus {
+     color: #212529;
+     background-color: #fff;
+     border-color: transparent;
+     outline: 0;
+     box-shadow: unset;
+}
+
+.container .rdrDateRangePickerWrapper {
+     width: 100%;
+}
+
+.container .rdrMonthAndYearWrapper {
+     padding-top: 0px;
+     height: auto;
+     top: 31px;
+     position: relative;
+     width: 86%;
+     margin: auto;
+}
+
+.container .rdrCalendarWrapper {
+     margin: auto;
+     width: 100%;
+}
+
+.content-date {
+     position: absolute;
+     left: 0;
+     z-index: 1;
+     width: 100%;
+}
+
+.container .rdrMonths {
+     margin: auto
+}
+
+header .container img {
+     width: 144px;
+     height: auto;
+     object-fit: cover
+}
+
+header .flex {
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+}
+
+img.logo.smaill {
+     width: 77px;
+     height: auto;
+     object-fit: cover;
+}
+
+.parent-logo {
+     position: relative;
+     width: 180px;
+     margin-top: 8px;
+}
+
+.childer-smaill {
+     position: relative;
+     width: 100%;
+     display: inline-block;
+     bottom: 15px;
+     top: -26px;
+     left: 139px;
+     font-size: 11px;
+}
+.profile {
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: flex-end;
+     align-items: center;
+     padding:0px 0px;
+     height: 64px;
+ }
+ .profile h6 {
+     color: #727272;
+     font-size: 14px;
+     letter-spacing: 0.2px;
+     margin-bottom: 0px;
+     font-weight: 400;
+ }
+ .profile .username p {
+     letter-spacing: 0.2px;
+     font-weight: 300;
+     font-size: 10px;
+     margin-bottom: 0px;
+ }
+ 
+ .username {
+     padding-right: 20px;
+ }
+ .icon-name {
+     padding-right: 20px;
+ }
+ header .container .icon-name img {
+     width: 32px;
+     height: 32px;
+ }
+ header .container .log-out img {
+     width: 15px;
+     height: 15px;
+ }
+ 
+ #sidebar-wrapper {
+     margin-left: 0;
+     left: 0;
+     width: 72px;
+     background: #FFFFFF 0% 0% no-repeat padding-box;
+     border-right: 0.5px solid #D2D2D2;
+     position: fixed;
+     height: 100%;
+     margin-top: 0px;
+     transition: all .4s ease 0s;
+ }
+ #sidebar-wrapper .sidenav---sidenav---_2tBP {
+     background: #FFFFFF 0% 0% no-repeat padding-box;
+     border: 0.5px solid #D2D2D2;
+     border:0;
+     max-width:72px;
+ }
+body .sidenav---sidenav---_2tBP {
+     min-width: 72px;
+   }
+ .sidebar-nav {
+     display: block;
+     float: left;
+     width: 150px;
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+ #page-content-wrapper {
+     padding-left: 0;
+     margin-left: 0;
+     width: 100%;
+     height: auto;
+ }
+ #wrapper.active {
+     padding-left: 150px;
+ }
+ #wrapper.active #sidebar-wrapper {
+     left: 150px;
+ }
+ #page-content-wrapper {
+   width: 100%;
+ }
+ body .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {
+     background:#727272;
+     width: 24px;
+     height: 3px;
+     margin: 0 auto 6px;
+ }
+ body .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL 
+ .sidenav---sidenav-toggle---1KRjR 
+ .sidenav---icon-bar---u1f02:nth-child(3) {
+     margin-top: -18px;
+ }
+ .sidenav---sidenav-toggle---1KRjR span:last-child {
+     width: 12px;
+     text-align: left;
+     margin-left: 21px;
+ }
+ 
+ .dashboard h3 {
+     color: #707070C4;
+     font-size: 40px;
+     margin-top: 30px;
+     text-align: left;
+ }
+ body .timepicker {
+     margin-top: 30px;
+     padding-right: 0px;
+ }
+ .sidenav---navicon---3gCRo img.logo.smaill {
+     width: 17px;
+     height: 17px;
+     position: absolute;
+     left: 4px;
+     top: 1px;
+ }
+ .icon_dashboard {
+     width: 24px;
+     height: 21px;
+     background: #fff;
+     position: relative;
+     left: 36%;
+     top: 29%;
+ }
+ .timepicker > span {
+     width:max-content;
+     float: right;
+     position: relative;
+ }
+.timepicker > span::before {
+     content: "Period";
+     font-size: 16px;
+     position: absolute;
+     left: 55px;
+     top: 12px;
+}
+.timepicker > span::after {
+     background : url(../src/assets/icon/calender.png) no-repeat;
+     content: "";
+     width: 22px;
+     height: 22px;
+     position: absolute;
+     left: 16px;
+     top: 13px;
+}
+
+.rdrStaticRanges span {
+     text-align: left;
+     float: left;
+}
+.parent-date-range .btn.btn-success {
+     position: absolute;
+     bottom: 21px;
+     left: 6%;
+     height: 30px;
+     border-radius: 4px;
+     line-height: 0;
+     font-size: 13px;
+ }
+ .parent-date-range .btn.btn-danger {
+     position: absolute;
+     top:0px;
+     right: 0px;
+     background: #fff;
+     color:#727272;
+     border-radius:0px;
+     border:1px solid transparent;
+}
+.rdrStaticRanges {
+     margin-top: 23px;
+}
+.market {
+     height: 48px;
+     background: #37B04C 0% 0% no-repeat padding-box;
+     border-radius: 2px;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     flex-direction: row;
+     padding: 10px 15px;
+     align-items: center;
+}    
+.market h2 {
+     font-size:20px;
+     color: #FFFFFF;
+     margin-bottom: 0px;
+}
+.market span {
+     color: #FFFFFF;
+     text-decoration: underline;
+     font-weight: 200;
+     margin-right: 15px;
+}
+.market img {
+     margin-right: 4px;
+     position:relative;
+     top:-2px;
+}
+body .content-market {
+     margin-top: 31px;
+     padding-right: 0px;
+}
+.button-up,
+.button-down {
+  position: relative;
+  padding: 5px;
+  margin: 30px auto;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+}
+.button-up::after,
+.button-down::after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  z-index: 11;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+}
+.button-up::after {
+     top: 15px;
+     transform: rotate(45deg);
+   }
+   
+   .button-down::after {
+     top: 9px;
+     transform: rotate(225deg);
+   }
+.flex.sales {
+     display: block;
+     width: 276px;
+     height: 104px;
+     background: #fff;
+     margin-left: 12px;
+     margin-top: 16px;
+ }
+ .sales-child,
+ .sales-child-2 {
+     width: 100%;
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     align-items: flex-start;
+     margin-top: 10px;
+ }
+ .sales-child h3 {
+     font-size: 15px;
+     color: #707070C4;
+     font-weight: 400;
+     margin-bottom:0px;
+ }
+ .sales-child-2 h3 {
+     font-size: 25px;
+     font-weight: 700;
+     margin-right: 15px;
+     text-align:left;
+ }
+ .sales-child-2 {
+     margin-top: 5px;
+     justify-content: flex-start;
+ }
+ .sales-child-2 h3 span {
+     display: block;
+     font-size: 10px;
+     font-weight: 300;
+     text-align: left;
+     color: #707070;
+     margin-top:5px;
+ }
+ .sales-child-2 em {
+     color: red;
+     font-style: normal;
+     margin-right: 5px;
+     margin-left: 0px;
+     font-weight: 700;
+ }
+ em img {
+     position: relative;
+     margin-right: 3px;
+     width: 6px;
+     height: 9px;
+     top: -1px;
+ }
+ body .chart__ {
+     width: 50%;
+     height: 441px;
+     background: #FFFFFF;
+     margin-top: 16px;
+ }
+ body .product-best,
+ body .product-competitor {
+     width: 25%;
+     height: 441px;
+     background: #FFFFFF;
+     margin-top: 16px;
+ }
+ .parent.chart {
+     display: inline-flex;
+     flex-wrap: nowrap;
+     justify-content: flex-start;
+     align-items: flex-start;
+     width: 100%;
+     gap: 20px;
+     padding-right:0px;
+     padding-left: 11px;
+ }
+ .data-chart .sales-child {
+     padding-left:20px;
+     padding-right:20px;
+     padding-top: 15px;
+ }
+ .data-chart .sales-child h3 {
+     font-size:20px;
+     color: #4D4F5C;
+ }
+ .data-chart select {
+     width: 150px;
+     border-radius: 2px;
+     position: relative;
+     right: -68px;
+     height: 35px;
+     top: -5px;
+     font-size: 13px;
+     background: #FFFFFF 0% 0% no-repeat padding-box;
+     box-shadow: 0px 2px 3px #0000000D;
+     border: 1px solid #D7DAE2;
+ }
+ .title {
+     display: flex;
+     flex-wrap: nowrap;
+     justify-content: space-between;
+     align-items: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-top: 16px;
+     margin-bottom: 16px;
+ }
+ .title h3 {
+     font-size:20px;
+     color: #4D4F5C;
+     font-weight:500;
+     margin-bottom: 0px;
+ }
+ .product .flex {
+     display: flex;
+     padding-left:20px;
+     padding-right: 20px;
+     margin-bottom: 10px;
+ }
+ .product .item_data img {
+     width: 60px;
+     height: 60px;
+     object-fit:cover;
+ }
+ .product .item_data .pertama img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ .product .item_data {
+     display:block;
+ }
+ .product .pertama.flex {
+     height: 80px;
+     border-radius: 4px;
+     width:100%;
+     margin-bottom: 11px;
+ }
+ .product .pertama.flex div:first-child {
+     background: #FFE7BD 0% 0% no-repeat padding-box;
+     border-top-left-radius: 4px;
+     border-bottom-left-radius: 4px;
+ }
+ .product .pertama.flex div:last-child {
+     border-top-right-radius: 4px;
+     background: #FFE7BD 0% 0% no-repeat padding-box;
+     border-bottom-right-radius: 4px;
+ }
+ .nama_product h4 {
+     color: #000000DE;
+     font-size: 16px;
+     margin-bottom: 0px;
+     text-overflow: ellipsis;
+     overflow: hidden;
+     white-space: nowrap;
+     margin-top: 14px;
+     text-align: left;
+ }
+ .product .pertama.flex .nama_product h4 {
+     color: #000000DE;
+     font-size: 20px;
+     margin-bottom: 0px;
+     text-overflow: ellipsis;
+     overflow: hidden;
+     white-space: nowrap;
+     margin-left: 8px;
+     margin-top: 14px;
+ }
+ .item_data .flex > div:last-child {
+     border: 0.5px solid #C5C5C59C;
+     border-top-right-radius: 4px;
+     border-bottom-right-radius: 4px;
+     border-left: 0px;
+    
+ }  
+ .item_data .flex > div:first-child {
+     border: 0.5px solid #C5C5C59C;
+     border-top-left-radius: 4px;
+     border-bottom-left-radius: 4px;
+     border-right: 0px;
+ }  
+ .pertama.flex .harga_jumlah {
+     font-size: 14px;
+     margin-left: 9px;
+     margin-top: 3px;
+ }
+ .harga_jumlah {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding-right: 15px;
+     font-size: 12px;
+ }
