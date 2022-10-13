@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/advotics/static/css/main.4b9f48d4.css",
-    "main.js": "/advotics/static/js/main.6681917d.js",
+    "main.css": "/advotics/static/css/main.9e9322ba.css",
+    "main.js": "/advotics/static/js/main.19a9256c.js",
     "static/js/787.6641facd.chunk.js": "/advotics/static/js/787.6641facd.chunk.js",
     "static/media/advotics-logo.png": "/advotics/static/media/advotics-logo.a8028261a52bb8deeaca.png",
     "static/media/logo.svg": "/advotics/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/advotics/index.html",
-    "main.4b9f48d4.css.map": "/advotics/static/css/main.4b9f48d4.css.map",
-    "main.6681917d.js.map": "/advotics/static/js/main.6681917d.js.map",
+    "main.9e9322ba.css.map": "/advotics/static/css/main.9e9322ba.css.map",
+    "main.19a9256c.js.map": "/advotics/static/js/main.19a9256c.js.map",
     "787.6641facd.chunk.js.map": "/advotics/static/js/787.6641facd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b9f48d4.css",
-    "static/js/main.6681917d.js"
+    "static/css/main.9e9322ba.css",
+    "static/js/main.19a9256c.js"
   ]
 }
