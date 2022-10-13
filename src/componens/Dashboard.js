@@ -19,6 +19,7 @@ import {
 import Chart from './Chart';
 import Product from './Product';
 import Competitor from './Competitor';
+
 const Dashboard = () => {
 
      const defineds = {
@@ -138,7 +139,7 @@ const Dashboard = () => {
      const handleOnChange = (range)=> {
           setRange([range.selection])
      }
-  
+   
      return (
           <Layout>
                <div className="container content">
@@ -170,8 +171,11 @@ const Dashboard = () => {
                                                   allowClear={false}
                                                   moveRangeOnFirstSelection={false}
                                                   ranges={range}
+                                                  selected={new Date()}
                                                   months={2}
                                                   direction="horizontal"
+                                                  maxDate={startOfDay(addDays(new Date(),-1))}
+                                                  minDate={endOfMonth(addMonths(new Date(), -6))}
                                                   className="calendarElement"
                                                   rangeColors={['#fff', '#fff', '#fff']}
                                                   staticRanges={staticRanges}

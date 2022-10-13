@@ -66,11 +66,6 @@ header {
 .container .rdrInputRanges {
      display: none;
 }
-
-.container button.rdrDay.rdrDayToday span {
-     color: #37B04C;
-}
-
 .container .rdrNextPrevButton {
      display: block;
      width: 24px;

@@ -9,7 +9,6 @@ const Competitor = () => {
      const getProduct = () => {
           axios.get(`${url}`).then((res) => {
                SetDataProduct(res['data'])
-               console.log(res)
           })
                .catch(error => console.error(`Error : ${error}`));
      }
